@@ -1,0 +1,54 @@
+﻿<Window x:Class="CronometroAncert.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CronometroAncert"
+        mc:Ignorable="d"
+        Title="Cronómetro Ancert" Height="230" Width="400" Icon="/Imagenes/iconoAncert.jpg">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="FontSize" Value="60" />
+            <!--<Setter Property="FontFamily" Value="" />-->
+        </Style>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="50" />
+                </Style>
+            </Style.Resources>
+            <!--<Setter Property="FontFamily" Value="" />-->
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="ExtraBold" />            
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="LbHoras" Content="00" Grid.Row="0" Grid.Column="0" Width="100" HorizontalContentAlignment="Center" />
+        <Label Content=":" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" />
+        <Label x:Name="LbMinutos" Content="00" Grid.Row="0" Grid.Column="2" Width="100" HorizontalContentAlignment="Center" />
+        <Label Content=":" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" />
+        <Label x:Name="LbSegundos" Content="00" Grid.Row="0" Grid.Column="4" Width="100" HorizontalContentAlignment="Center" />
+        <Button x:Name="BtStart" Content="START" Grid.Row="2" Grid.Column="0" Click="BtStart_Click" />
+        <Button x:Name="BtPause" Content="PAUSE" Grid.Row="2" Grid.Column="2" Click="BtPause_Click" />
+        <Button x:Name="BtStop" Content="STOP" Grid.Row="2" Grid.Column="4" Click="BtStop_Click" />
+    </Grid>
+</Window>
